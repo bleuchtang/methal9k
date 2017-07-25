@@ -9,7 +9,16 @@ defmodule Methal9k.Mixfile do
      package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     compilers: [:rustler] ++ Mix.compilers,
+     rustler_crates: rustler_crates(),
      deps: deps()]
+  end
+
+  defp rustler_crates do
+    [helloworld: [
+        path: "native/helloworld",
+        mode: (if Mix.env == :prod, do: :release, else: :debug),
+      ]]
   end
 
   def application do
@@ -26,6 +35,7 @@ defmodule Methal9k.Mixfile do
       {:timex, ">= 3.1.11"},
       {:yaml_elixir, ">= 1.3.0"},
       {:html_entities, ">= 0.3.0"},
+      {:rustler, ">= 0.10.1"},
       {:credo, ">= 0.6.1", only: :dev},
       {:dogma, ">= 0.1.13", only: :dev},
       {:ex_doc, ">= 0.14.5", only: :dev},
