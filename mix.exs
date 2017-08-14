@@ -29,6 +29,7 @@ defmodule Methal9k.Mixfile do
       {:credo, ">= 0.6.1", only: :dev},
       {:dogma, ">= 0.1.13", only: :dev},
       {:ex_doc, ">= 0.14.5", only: :dev},
+      {:mock, "~> 0.2.1", only: :test},
       {:excoveralls, ">= 0.6.2", only: :test}
     ]
   end

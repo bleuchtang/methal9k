@@ -12,7 +12,7 @@ defmodule Hal do
     - `client` store the ExIrc client state
     - `host` irc host (chat.freenode.net)
     - `port`  irc port (6697)
-    - `chans` irc channels (["#awesome-chan", "#pulp-fiction"]
+    - `chans` irc channels (["#awesome-chan"])
     - `nick` login for the irc server
     - `pass` the associated password
     - `user` misc infos
